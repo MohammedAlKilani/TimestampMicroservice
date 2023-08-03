@@ -50,7 +50,10 @@ app.get("/api/:date", function (req, res) {
   }
   
 );
-
+app.get("/api", function (req, res) {
+ let date = new Date()
+  return res.json({unix:date.getTime(), utc:date.toUTCString()});
+})
 
 
 // listen for requests :)
